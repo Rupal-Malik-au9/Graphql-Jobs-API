@@ -15,7 +15,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
+/* 
 .cf:before,
 .cf:after {
   content: " ";
@@ -108,4 +108,4 @@ code {
   width: 8em;
   display: inline;
   padding-right: 1em;
-}
+} */

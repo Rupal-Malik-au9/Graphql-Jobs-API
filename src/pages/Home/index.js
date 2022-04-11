@@ -15,24 +15,25 @@ export default function Home() {
     })
       .then((res) => res.json())
       .then((data) => setJobData(data.data.jobs));
-  }, [jobData]);
+  }, []);
 
   return (
     <JobsListWrapper>
       {jobData.length > 0 && (
-        <div class="wrap cf">
-          <div class="list">
+        <div className="wrap cf">
+          <div className="list">
             {/* list */}
-            <ul class="listWrap">
+            <ul className="listWrap">
               {jobData.map((job) => (
-                <li class="items odd">
-                  <div class="infoWrap">
-                    <div class="listSection">
-                      <p class="itemNumber">COMPANY: {job.companyName.name}</p>
+                <li className="items odd">
+                  <div className="infoWrap">
+                    <div className="listSection">
+                      <p className="itemNumber">COMPANY: {job.companyName.name}</p>
                       <h3>{job.title}</h3>
                       {job?.cities[0] === undefined ? <p> LOCATION NOT SPECIFIED</p> : <p> LOCATION(city,country):  {job?.cities[0]?.name + ',' + job?.cities[0]?.country?.name}</p>}
                       <br />
-                      <p class="remoteStatus">{job.remotes.length > 0 && job?.remotes[0].name}</p>
+                      <p className="remoteStatus">{job.remotes.length > 0 && job?.remotes[0].name}</p>
+                      <a href={`/details?jobSlug=${jobSlug}&companySlug=${companySlug}`}> <button> GET DETAILS</button></a>
                     </div>
                   </div>
                 </li>))}
